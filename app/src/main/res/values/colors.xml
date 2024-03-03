@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grayText">#B2B2B3</color>
+    <color name="topBackground">#242235</color>
+    <color name="profileButtonsColor">#FB5E06</color>
 </resources>
