@@ -6,6 +6,7 @@ import com.pavelkortp.socialnetwork.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private  var useKeyboard: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,11 @@ class MainActivity : AppCompatActivity() {
 //            }
 //            return@setOnEditorActionListener false
 //        }
+//
+//        binding.useKeyboard.setOnClickListener {
+//            this.useKeyboard = binding.useKeyboard.isChecked
+//            updateUI()
+//        }
 
     }
 
@@ -34,15 +40,44 @@ class MainActivity : AppCompatActivity() {
 //        }
 //
 //        val encodedKeyword: String = URLEncoder.encode(keyword, StandardCharsets.UTF_8.name())
-//
+//        binding.ProgressBar.visibility = View.VISIBLE
 //        Glide.with(this)
 //            .load("https://source.unsplash.com/random/300x200?$encodedKeyword")
 //            .skipMemoryCache(true)
 //            .diskCacheStrategy(DiskCacheStrategy.NONE)
-//            .placeholder(R.drawable.bob)
+//            .listener(object :RequestListener<Drawable>{
+//                override fun onLoadFailed(
+//                    e: GlideException?,
+//                    model: Any?,
+//                    target: Target<Drawable>,
+//                    isFirstResource: Boolean
+//                ): Boolean {
+//                    binding.ProgressBar.visibility = View.GONE
+//                    return false
+//                }
+//
+//                override fun onResourceReady(
+//                    resource: Drawable,
+//                    model: Any,
+//                    target: Target<Drawable>?,
+//                    dataSource: DataSource,
+//                    isFirstResource: Boolean
+//                ): Boolean {
+//                    binding.ProgressBar.visibility = View.GONE
+//                    return false
+//                }
+//            })
 //            .into(binding.Pic)
 //        return false
 //    }
-
+//
+//
+//    private fun updateUI(){
+//        if (useKeyboard){
+//            binding.SearchField.visibility = View.VISIBLE
+//        }else{
+//            binding.SearchField.visibility = View.GONE
+//        }
+//    }
 
 }

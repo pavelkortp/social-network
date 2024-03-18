@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/LogOut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -35,8 +35,11 @@
         android:background="@drawable/bordered_button_shape"
         android:backgroundTint="@color/grayText"
         android:text="Log out"
+        android:textAllCaps="false"
         android:textColor="@color/grayText"
+
         android:textSize="@dimen/smallText"
+
         app:layout_constraintBottom_toBottomOf="@id/Settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/Settings" />
@@ -101,70 +104,68 @@
         app:layout_constraintTop_toBottomOf="@id/Career" />
 
 
-    <LinearLayout
-        android:id="@+id/links"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TopView">
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/links"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/TopView">-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/FacebookCard"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="@dimen/default_margin"
-            app:cardCornerRadius="130dp">
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/FacebookCard"-->
+    <!--            android:layout_width="80dp"-->
+    <!--            android:layout_height="80dp"-->
+    <!--            android:layout_margin="@dimen/medium_margin"-->
+    <!--            app:cardCornerRadius="130dp">-->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bob" />
+    <!--            <ImageView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_centerHorizontal="true"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                android:src="@drawable/bob" />-->
 
-        </androidx.cardview.widget.CardView>
+    <!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/LinkedinCard"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="@dimen/default_margin"
-            app:cardCornerRadius="130dp">
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/LinkedinCard"-->
+    <!--            android:layout_width="80dp"-->
+    <!--            android:layout_height="80dp"-->
+    <!--            android:layout_margin="@dimen/medium_margin"-->
+    <!--            app:cardCornerRadius="130dp">-->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bob" />
+    <!--            <ImageView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_centerHorizontal="true"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                android:src="@drawable/bob" />-->
 
-        </androidx.cardview.widget.CardView>
+    <!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/InstagramCard"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="@dimen/default_margin"
-            app:cardCornerRadius="130dp">
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/InstagramCard"-->
+    <!--            android:layout_width="80dp"-->
+    <!--            android:layout_height="80dp"-->
+    <!--            android:layout_margin="@dimen/medium_margin"-->
+    <!--            app:cardCornerRadius="130dp">-->
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bob" />
+    <!--            <ImageView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_centerHorizontal="true"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                android:src="@drawable/bob" />-->
 
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
+    <!--        </androidx.cardview.widget.CardView>-->
+    <!--    </LinearLayout>-->
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ContactsBTN"
         android:layout_width="0dp"
         android:layout_height="65dp"
@@ -181,7 +182,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/EditProfileBTN"
         android:layout_width="0dp"
         android:layout_height="55dp"
@@ -189,11 +190,24 @@
         android:background="@drawable/bordered_button_shape"
         android:backgroundTint="@color/black"
         android:text="Edit profile"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="@dimen/smallText"
         app:layout_constraintBottom_toTopOf="@id/ContactsBTN"
         app:layout_constraintEnd_toEndOf="@id/ContactsBTN"
         app:layout_constraintStart_toStartOf="@id/ContactsBTN" />
+
+    <TextView
+        android:id="@+id/ProfileTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:text="Go to settings and fill out the profile"
+        android:textColor="@color/black"
+        android:textSize="@dimen/smallText"
+        app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"
+        app:layout_constraintEnd_toEndOf="@id/EditProfileBTN"
+        app:layout_constraintStart_toStartOf="@id/EditProfileBTN" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
