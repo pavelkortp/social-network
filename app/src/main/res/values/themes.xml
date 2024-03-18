@@ -11,4 +11,14 @@
     <style name="CustomFont">
         <item name="android:fontFamily">@font/open_sans</item>
     </style>
+
+    <!-- styles.xml -->
+    <style name="register">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.09</item>
+        <item name="android:textColor">#FAFAFA</item>
+    </style>
+
+
+
 </resources>

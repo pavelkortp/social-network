@@ -1,5 +1,6 @@
 package com.pavelkortp.socialnetwork
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pavelkortp.socialnetwork.databinding.ActivityMainBinding
@@ -12,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.LogOut.setOnClickListener{
+            startActivity(Intent(this, AuthActivity::class.java))
+        }
 
 //        binding.SearchBTN.setOnClickListener {
 //            searchImg()

@@ -4,6 +4,162 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/MainBackground"
     tools:context=".AuthActivity">
 
+    <TextView
+        android:id="@+id/AuthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's get acquainted"
+        android:textColor="@color/White"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/AuthSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fill out the profile and go to the application!"
+        android:textColor="@color/White"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/AuthTitle" />
+
+
+    <EditText
+        android:id="@+id/EmailInput"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/medium_margin"
+        android:inputType="textEmailAddress"
+        android:textSize="18sp"
+        android:textColor="@color/White"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/AuthSubtitle" />
+
+    <EditText
+        android:id="@+id/PasswordInput"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/medium_margin"
+        android:inputType="textPassword"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/EmailInput" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/RememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Remember Me"
+        android:textColor="@color/White"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/PasswordInput"
+        app:layout_constraintTop_toBottomOf="@id/PasswordInput" />
+
+
+    <TextView
+        android:id="@+id/BottomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_margin"
+        android:text="Already have an account?"
+        android:textColor="@color/Gray"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/SignInText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:text="Sign in"
+        android:textColor="@color/White"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/BottomText"
+        app:layout_constraintStart_toEndOf="@id/BottomText"
+        app:layout_constraintTop_toTopOf="@id/BottomText" />
+
+    <TextView
+        android:id="@+id/WarningText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By clicking Register you agree to our Terms"
+        android:textColor="@color/White"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/WarningText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/WarningText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="and Conditions"
+        android:textColor="@color/White"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/BottomText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/RegisterBTN"
+        style="@style/register"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@id/WarningText1"
+        app:layout_constraintStart_toStartOf="@id/PasswordInput"
+        app:layout_constraintEnd_toEndOf="@id/PasswordInput"
+        android:background="@drawable/bordered_button_shape"
+        android:backgroundTint="@color/profileButtonsColor"
+        android:layout_margin="@dimen/medium_margin"
+        android:text="REGISTER"
+        android:textSize="22sp"
+        android:textColor="@color/White" />
+
+    <TextView
+        android:id="@+id/TextBetweenBTNS"
+        style="@style/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/RegisterBTN"
+        android:text="or"
+        android:textColor="@color/White"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/medium_margin" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/GoogleBTN"
+        style="@style/register"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        app:layout_constraintStart_toStartOf="@id/RegisterBTN"
+        app:layout_constraintEnd_toEndOf="@id/RegisterBTN"
+        app:layout_constraintBottom_toTopOf="@id/TextBetweenBTNS"
+        android:background="@drawable/google_btn"
+        android:backgroundTint="@color/White"
+        android:text="GOOGLE"
+        android:textColor="@color/Black"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
