@@ -3,4 +3,15 @@
     <string name="username">User Name</string>
     <string name="career">Career</string>
     <string name="home_address">Home address</string>
+    <string name="auth_subtitle">Fill out the profile and go to the application!</string>
+    <string name="auth_title">Let\'s get acquainted</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="warning1">By clicking Register you agree to our Terms</string>
+    <string name="warning2">and Conditions</string>
+    <string name="register">REGISTER</string>
+    <string name="google">GOOGLE</string>
+    <string name="sign_up">Sign up</string>
+    <string name="don_t_have_account">Don’t have account?</string>
 </resources>

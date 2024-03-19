@@ -5,38 +5,36 @@ import android.content.Intent
 import android.os.Bundle
 import android.transition.Slide
 import androidx.appcompat.app.AppCompatActivity
-import com.pavelkortp.socialnetwork.databinding.ActivityAuthBinding
+import com.pavelkortp.socialnetwork.databinding.ActivityLoginBinding
 
-class AuthActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAuthBinding
+class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAuthBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.RegisterBTN.setOnClickListener {
-            register()
+        binding.LoginBTN.setOnClickListener {
+            login()
         }
 
-        binding.SignInText.setOnClickListener {
-            signIn()
+        binding.SignUpText.setOnClickListener {
+            signUp()
         }
-
-
 
         window.enterTransition = Slide()
+        window.exitTransition = Slide()
     }
 
-    private fun register(): Boolean {
+    private fun login(): Boolean {
         val email = binding.EmailInput.text.toString()
         val pass = binding.PasswordInput.text.toString()
 
         if (email.isBlank()) {
             binding.EmailInput.error = "Email is empty"
             return true
-        }
-        if (pass.isBlank()) {
+        } else if(pass.isBlank()) {
             binding.PasswordInput.error = "Password is empty"
             return true
         }
@@ -50,9 +48,9 @@ class AuthActivity : AppCompatActivity() {
         return false
     }
 
-    private fun signIn():Boolean{
+    private fun signUp(): Boolean {
         startActivity(
-            Intent(this, LoginActivity::class.java),
+            Intent(this, AuthActivity::class.java),
             ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
         )
         return false

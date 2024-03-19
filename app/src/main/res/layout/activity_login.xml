@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/MainBackground"
-    tools:context=".AuthActivity">
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/AuthTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/auth_title"
+        android:text="Hello!"
         android:textColor="@color/White"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:id="@+id/AuthSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/auth_subtitle"
+        android:text="Enter your email and password below"
         android:textColor="@color/White"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,12 +37,12 @@
         android:id="@+id/EmailLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
         android:text="Email"
         android:textColor="@color/Gray"
+        android:layout_marginStart="@dimen/default_margin"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/EmailInput"
-        app:layout_constraintStart_toStartOf="@id/EmailInput" />
+        app:layout_constraintStart_toStartOf="@id/EmailInput"
+        app:layout_constraintBottom_toTopOf="@id/EmailInput" />
 
     <EditText
         android:id="@+id/EmailInput"
@@ -54,7 +54,7 @@
         android:paddingEnd="@dimen/default_margin"
         android:textColor="@color/White"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/RegisterBTN"
+        app:layout_constraintBottom_toBottomOf="@id/LoginBTN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,13 +64,13 @@
         android:id="@+id/PasswordLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/default_margin"
         android:text="Password"
         android:textColor="@color/Gray"
+        android:padding="@dimen/default_margin"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/PasswordInput"
+        app:layout_constraintTop_toBottomOf="@id/EmailInput"
         app:layout_constraintStart_toStartOf="@id/EmailInput"
-        app:layout_constraintTop_toBottomOf="@id/EmailInput" />
+        app:layout_constraintBottom_toTopOf="@id/PasswordInput" />
 
     <EditText
         android:id="@+id/PasswordInput"
@@ -78,9 +78,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_margin"
         android:inputType="textPassword"
-        android:padding="@dimen/default_margin"
         android:textColor="@color/White"
         android:textSize="20sp"
+        android:padding="@dimen/default_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/EmailInput" />
@@ -96,11 +96,23 @@
         app:layout_constraintTop_toBottomOf="@id/PasswordInput" />
 
     <TextView
+        android:id="@+id/Forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot your password?"
+        android:textColor="@color/White"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/PasswordInput"
+        app:layout_constraintBottom_toBottomOf="@id/RememberMe"
+        app:layout_constraintTop_toTopOf="@id/RememberMe" />
+
+    <TextView
         android:id="@+id/BottomText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_margin"
-        android:text="@string/already_have_an_account"
+        android:text="@string/don_t_have_account"
         android:textColor="@color/Gray"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -110,11 +122,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/SignInText"
+        android:id="@+id/SignUpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_margin"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         android:textColor="@color/White"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -122,84 +134,23 @@
         app:layout_constraintStart_toEndOf="@id/BottomText"
         app:layout_constraintTop_toTopOf="@id/BottomText" />
 
-    <TextView
-        android:id="@+id/WarningText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/warning1"
-        android:textColor="@color/White"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@id/WarningText2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/WarningText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/warning2"
-        android:textColor="@color/White"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@id/BottomText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/RegisterBTN"
+        android:id="@+id/LoginBTN"
         style="@style/register"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_margin="@dimen/medium_margin"
+        app:layout_constraintBottom_toTopOf="@id/BottomText"
+        app:layout_constraintStart_toStartOf="@id/PasswordInput"
+        app:layout_constraintEnd_toEndOf="@id/PasswordInput"
+        android:foreground="?attr/selectableItemBackground"
         android:background="@drawable/bordered_button_shape"
         android:backgroundTint="@color/profileButtonsColor"
-        android:foreground="?attr/selectableItemBackground"
-        android:text="@string/register"
-        android:textColor="@color/White"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@id/WarningText1"
-        app:layout_constraintEnd_toEndOf="@id/PasswordInput"
-        app:layout_constraintStart_toStartOf="@id/PasswordInput" />
-
-    <TextView
-        android:id="@+id/TextBetweenBTNS"
-        style="@style/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_margin"
-        android:text="or"
-        android:textColor="@color/White"
+        android:text="LOGIN"
         android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/RegisterBTN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/White" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/GoogleLogo"-->
-<!--        android:layout_width="40dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        app:layout_constraintStart_toStartOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintTop_toTopOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintHorizontal_bias="0.28"-->
-<!--        android:src="@drawable/logo" />-->
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/GoogleBTN"
-        style="@style/register"
-        app:layout_constraintBottom_toTopOf="@id/TextBetweenBTNS"
-        app:layout_constraintEnd_toEndOf="@id/RegisterBTN"
-        app:layout_constraintStart_toStartOf="@id/RegisterBTN"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
-        android:background="@drawable/button_shape"
-        android:backgroundTint="@color/White"
-        android:foreground="?attr/selectableItemBackground"
-        android:gravity="center"
-        android:text="@string/google"
-        android:textColor="@color/Black"
-        android:layout_gravity="center"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
