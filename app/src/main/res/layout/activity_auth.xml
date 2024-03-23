@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_margin"
-        android:text="Email"
+        android:text="@string/email"
         android:textColor="@color/Gray"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/EmailInput"
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/default_margin"
-        android:text="Password"
+        android:text="@string/password"
         android:textColor="@color/Gray"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/PasswordInput"
@@ -166,7 +166,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_margin"
-        android:text="or"
+        android:text="@string/or"
         android:textColor="@color/White"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -174,32 +174,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/GoogleLogo"-->
-<!--        android:layout_width="40dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        app:layout_constraintStart_toStartOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintTop_toTopOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/GoogleBTN"-->
-<!--        app:layout_constraintHorizontal_bias="0.28"-->
-<!--        android:src="@drawable/logo" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/GoogleLogo"-->
+    <!--        android:layout_width="40dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/GoogleBTN"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/GoogleBTN"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/GoogleBTN"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/GoogleBTN"-->
+    <!--        app:layout_constraintHorizontal_bias="0.28"-->
+    <!--        android:src="@drawable/logo" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/GoogleBTN"
         style="@style/register"
-        app:layout_constraintBottom_toTopOf="@id/TextBetweenBTNS"
-        app:layout_constraintEnd_toEndOf="@id/RegisterBTN"
-        app:layout_constraintStart_toStartOf="@id/RegisterBTN"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:background="@drawable/button_shape"
         android:backgroundTint="@color/White"
+        android:drawableStart="@drawable/logo"
         android:foreground="?attr/selectableItemBackground"
         android:gravity="center"
         android:text="@string/google"
         android:textColor="@color/Black"
-        android:layout_gravity="center"/>
+        app:layout_constraintBottom_toTopOf="@id/TextBetweenBTNS"
+        app:layout_constraintEnd_toEndOf="@id/RegisterBTN"
+        app:layout_constraintStart_toStartOf="@id/RegisterBTN" />
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/GoogleBTN"-->
+<!--        style="@style/register"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="57dp"-->
+<!--        android:background="@drawable/button_shape"-->
+<!--        android:backgroundTint="@color/White"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/TextBetweenBTNS"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/RegisterBTN"-->
+<!--        app:layout_constraintStart_toStartOf="@id/RegisterBTN"-->
+<!--        android:gravity="center">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/logo"/>-->
+
+<!--        <TextView-->
+<!--            style="@style/register"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/google"-->
+<!--            android:textColor="@color/Black"/>-->
+
+<!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

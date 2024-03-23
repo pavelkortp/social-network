@@ -102,65 +102,42 @@
         app:layout_constraintTop_toBottomOf="@id/Career" />
 
 
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/links"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:gravity="center"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/TopView">-->
+        <LinearLayout
+            android:id="@+id/links"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TopView">
 
-    <!--        <androidx.cardview.widget.CardView-->
-    <!--            android:id="@+id/FacebookCard"-->
-    <!--            android:layout_width="80dp"-->
-    <!--            android:layout_height="80dp"-->
-    <!--            android:layout_margin="@dimen/medium_margin"-->
-    <!--            app:cardCornerRadius="130dp">-->
+            <ImageView
+                android:id="@+id/FacebookIcon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="@dimen/medium_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/facebook_icon" />
 
-    <!--            <ImageView-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_centerHorizontal="true"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@drawable/bob" />-->
+            <ImageView
+                android:id="@+id/LinkedinIcon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="@dimen/medium_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/linkedin_icon" />
 
-    <!--        </androidx.cardview.widget.CardView>-->
+            <ImageView
+                android:id="@+id/InstagramIcon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="@dimen/medium_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/instagram_icon" />
 
-    <!--        <androidx.cardview.widget.CardView-->
-    <!--            android:id="@+id/LinkedinCard"-->
-    <!--            android:layout_width="80dp"-->
-    <!--            android:layout_height="80dp"-->
-    <!--            android:layout_margin="@dimen/medium_margin"-->
-    <!--            app:cardCornerRadius="130dp">-->
-
-    <!--            <ImageView-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_centerHorizontal="true"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@drawable/bob" />-->
-
-    <!--        </androidx.cardview.widget.CardView>-->
-
-    <!--        <androidx.cardview.widget.CardView-->
-    <!--            android:id="@+id/InstagramCard"-->
-    <!--            android:layout_width="80dp"-->
-    <!--            android:layout_height="80dp"-->
-    <!--            android:layout_margin="@dimen/medium_margin"-->
-    <!--            app:cardCornerRadius="130dp">-->
-
-    <!--            <ImageView-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_centerHorizontal="true"-->
-    <!--                android:scaleType="centerCrop"-->
-    <!--                android:src="@drawable/bob" />-->
-
-    <!--        </androidx.cardview.widget.CardView>-->
-    <!--    </LinearLayout>-->
+        </LinearLayout>
 
 
     <androidx.appcompat.widget.AppCompatButton
