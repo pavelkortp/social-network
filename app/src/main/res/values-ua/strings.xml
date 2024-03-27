@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SocialNetwork</string>
+    <string name="username">User Name</string>
+    <string name="career">Кар\'єра</string>
+    <string name="home_address">Домашня адреса</string>
+    <string name="auth_subtitle">Заповнюйте анкету та переходьте до додатку!</string>
+    <string name="auth_title">Давайте познайомимося</string>
+    <string name="remember_me">Запам\'ятайте мене</string>
+    <string name="already_have_an_account">Вже маєте акаунт?</string>
+    <string name="sign_in">Увійти</string>
+    <string name="warning1">Натискаючи на Реєстрація ви погоджуєтесь з нашими правилами</string>
+    <string name="warning2">та Умовами</string>
+    <string name="register">Реєстрація</string>
+    <string name="google">GOOGLE</string>
+    <string name="sign_up">Зареєструватися</string>
+    <string name="don_t_have_account">Не маєте акаунту?</string>
+    <string name="password">Пароль</string>
+    <string name="email">Пошта</string>
+    <string name="or">або</string>
+    <string name="view_my_contacts">ПЕРЕЙТИ ДО КОНТАКТІВ</string>
+    <string name="edit_profile">Редагувати профіль</string>
+    <string name="go_to_settings_and_fill_out_the_profile">Додайте інформацію про себе</string>
+    <string name="password_is_empty">Пароль не вказано</string>
+    <string name="password_incorrect">Пароль повинен складатися з 8 символів або більше</string>
+    <string name="email_is_empty">Електронна пошта не вказана</string>
+    <string name="email_incorrect">Це не електронна пошта</string>
+    <string name="forgot_your_password">Забули пароль?</string>
+    <string name="login">УВІЙТИ</string>
+    <string name="login_subtitle">Введіть свою електронну адресу та пароль нижче</string>
+    <string name="login_title">Привіт!</string>
+    <string name="settings">Параметри</string>
+    <string name="log_out">Вийти</string>
+</resources>

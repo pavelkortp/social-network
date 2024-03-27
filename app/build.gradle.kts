@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+apply { plugin("kotlin-parcelize") }
+
 android {
     namespace = "com.pavelkortp.socialnetwork"
     compileSdk = 34
@@ -33,12 +35,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
-dependencies {
+val glideVersion = "4.16.0"
 
+dependencies {
+    implementation("com.github.bumptech.glide:glide:$glideVersion")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/MainBackground"
+    tools:context=".AuthActivity">
+
+    <TextView
+        android:id="@+id/AuthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_title"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_title_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/AuthSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_subtitle"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_small_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/AuthTitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EmailInputLayout"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_margin"
+        android:hint="@string/email"
+        app:errorEnabled="true"
+        app:expandedHintEnabled="false"
+        android:textColorHint="@color/primaryText"
+        app:layout_constraintBottom_toBottomOf="@id/RegisterBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EmailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/MainBackground"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/normalText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/PasswordInputLayout"
+        style="?attr/textInputFilledStyle"
+        android:textColorHint="@color/primaryText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@id/EmailInputLayout"
+        app:layout_constraintStart_toStartOf="@id/EmailInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/EmailInputLayout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/MainBackground"
+            android:inputType="textPassword"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/normalText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/RememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/checkbox_height"
+        android:text="@string/remember_me"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_normal_text"
+        app:layout_constraintStart_toStartOf="@id/PasswordInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/PasswordInputLayout" />
+
+    <TextView
+        android:id="@+id/BottomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_margin"
+        android:text="@string/already_have_an_account"
+        android:textColor="@color/otherText"
+        android:textSize="@dimen/auth_normal_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/SignInText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:text="@string/sign_in"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_normal_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/BottomText"
+        app:layout_constraintStart_toEndOf="@id/BottomText"
+        app:layout_constraintTop_toTopOf="@id/BottomText" />
+
+    <TextView
+        android:id="@+id/WarningText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/warning1"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_small_text"
+        app:layout_constraintBottom_toTopOf="@id/WarningText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/WarningText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/warning2"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_small_text"
+        app:layout_constraintBottom_toTopOf="@id/BottomText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/RegisterBTN"
+        style="@style/register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/register_btn_height"
+        android:layout_margin="@dimen/medium_margin"
+        android:background="@drawable/bordered_button_shape"
+        android:backgroundTint="@color/profileButtonsColor"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/register"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_large_text"
+        app:layout_constraintBottom_toTopOf="@id/WarningText1"
+        app:layout_constraintEnd_toEndOf="@id/PasswordInputLayout"
+        app:layout_constraintStart_toStartOf="@id/PasswordInputLayout" />
+
+    <TextView
+        android:id="@+id/TextBetweenBTNS"
+        style="@style/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_margin"
+        android:text="@string/or"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/auth_large_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/RegisterBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/GoogleBTN"
+        style="@style/register"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/google_btn_height"
+        android:background="@drawable/google_background"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        android:text="@string/google"
+        app:layout_constraintBottom_toTopOf="@id/TextBetweenBTNS"
+        app:layout_constraintEnd_toEndOf="@id/RegisterBTN"
+        app:layout_constraintStart_toStartOf="@id/RegisterBTN" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

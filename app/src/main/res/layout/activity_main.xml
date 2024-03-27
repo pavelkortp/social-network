@@ -1,18 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <View
+        android:id="@+id/TopView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/MainBackground"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/BottomView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/SecondaryBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TopView"/>
+
+    <TextView
+        android:id="@+id/Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:text="@string/settings"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/largeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/LogOut"
+        android:layout_width="@dimen/logout_btn_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:background="@drawable/bordered_button_shape"
+        android:backgroundTint="@color/otherText"
+        android:text="@string/log_out"
+        android:textAllCaps="false"
+        android:textColor="@color/otherText"
+        android:textSize="@dimen/smallText"
+        app:layout_constraintBottom_toBottomOf="@id/Settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Settings" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/PhotoCard"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="@dimen/large_margin"
+        app:cardCornerRadius="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Settings">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bob" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PhotoCard"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/username"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/normalText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/PhotoCard" />
+
+    <TextView
+        android:id="@+id/Career"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Name"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/career"
+        android:textColor="@color/otherText"
+        android:textSize="@dimen/smallText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Name" />
+
+    <TextView
+        android:id="@+id/Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Career"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/home_address"
+        android:textColor="@color/otherText"
+        android:textSize="@dimen/smallText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Career" />
+
+
+    <LinearLayout
+        android:id="@+id/links"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TopView">
+
+        <ImageView
+            android:id="@+id/FacebookIcon"
+            android:layout_width="@dimen/media_icon_size"
+            android:layout_height="@dimen/media_icon_size"
+            android:layout_margin="@dimen/medium_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/facebook_icon" />
+
+        <ImageView
+            android:id="@+id/LinkedinIcon"
+            android:layout_width="@dimen/media_icon_size"
+            android:layout_height="@dimen/media_icon_size"
+            android:layout_margin="@dimen/medium_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/linkedin_icon" />
+
+        <ImageView
+            android:id="@+id/InstagramIcon"
+            android:layout_width="@dimen/media_icon_size"
+            android:layout_height="@dimen/media_icon_size"
+            android:layout_margin="@dimen/medium_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/instagram_icon" />
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ContactsBTN"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/filled_btn_height"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/filled_button_shape"
+        android:backgroundTint="@color/profileButtonsColor"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/view_my_contacts"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/smallText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/EditProfileBTN"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bordered_btn_height"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/bordered_button_shape"
+        android:backgroundTint="@color/secondary"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/edit_profile"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/smallText"
+        app:layout_constraintBottom_toTopOf="@id/ContactsBTN"
+        app:layout_constraintEnd_toEndOf="@id/ContactsBTN"
+        app:layout_constraintStart_toStartOf="@id/ContactsBTN" />
+
+    <TextView
+        android:id="@+id/ProfileTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:text="@string/go_to_settings_and_fill_out_the_profile"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/smallText"
+        app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"
+        app:layout_constraintEnd_toEndOf="@id/EditProfileBTN"
+        app:layout_constraintStart_toStartOf="@id/EditProfileBTN" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

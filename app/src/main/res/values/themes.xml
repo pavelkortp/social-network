@@ -1,9 +1,24 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.SocialNetwork" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:textViewStyle">@style/CustomFont</item>
     </style>
 
     <style name="Theme.SocialNetwork" parent="Base.Theme.SocialNetwork" />
+
+    <style name="CustomFont">
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+
+    <!-- styles.xml -->
+    <style name="register">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0.09</item>
+        <item name="android:textColor">#FAFAFA</item>
+    </style>
+
+
 </resources>
