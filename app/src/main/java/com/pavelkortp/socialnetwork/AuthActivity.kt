@@ -5,16 +5,19 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.transition.Slide
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.pavelkortp.socialnetwork.databinding.ActivityAuthBinding
 
+const val MIN_PASS_LENGTH = 8
+
 class AuthActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAuthBinding
+
+    private val binding: ActivityAuthBinding by lazy {
+        ActivityAuthBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -37,14 +40,14 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun register(): Boolean {
-        val email = binding.EmailInput.text.toString()
+        val email = binding.EmailInputLayout.text.toString()
         val pass = binding.PasswordInput.text.toString()
 
         if (isInvalidEmail(email) || isInvalidPassword(pass))
             return true
 
-        if(binding.RememberMe.isChecked){
-            saveData(email,pass)
+        if (binding.RememberMe.isChecked) {
+            saveData(email, pass)
         }
         toMainActivity(email, pass)
         return false
@@ -52,10 +55,13 @@ class AuthActivity : AppCompatActivity() {
 
 
     private fun saveData(email: String, pass: String) {
-        val sharedPreferences = getSharedPreferences("my_app_preferences", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences(
+            FieldsKeys.PREFERENCES.key,
+            Context.MODE_PRIVATE
+        )
         val editor = sharedPreferences.edit()
-        editor.putString("email",email)
-        editor.putString("password", pass)
+        editor.putString(FieldsKeys.EMAIL.key, email)
+        editor.putString(FieldsKeys.PASSWORD.key, pass)
         editor.apply()
     }
 
@@ -73,10 +79,10 @@ class AuthActivity : AppCompatActivity() {
      */
     private fun isInvalidPassword(password: String): Boolean {
         return if (password.isBlank()) {
-            binding.PasswordInput.error = "Password is empty"
+            binding.PasswordInput.error = getString(R.string.password_is_empty)
             true
-        } else if (password.length < 8) {
-            binding.PasswordInput.error = "Password must be an 8 symbols or more"
+        } else if (password.length < MIN_PASS_LENGTH) {
+            binding.PasswordInput.error = getString(R.string.password_icnorrect)
             true
         } else
             false
@@ -87,35 +93,34 @@ class AuthActivity : AppCompatActivity() {
      */
     private fun isInvalidEmail(email: String): Boolean {
         return if (email.isBlank()) {
-            binding.EmailInput.error = "Email is empty"
+            binding.EmailInputLayout.error = getString(R.string.email_is_empty)
             true
-        }else if (!email.matches(Regex("\\w+[._]\\w+@\\w{5,14}\\.\\w{2,6}"))){
-            binding.EmailInput.error = "This is not an email"
+        } else if (!email.matches(Regex("\\w+[._]\\w+@\\w{5,14}\\.\\w{2,6}"))) {
+            binding.EmailInputLayout.error = getString(R.string.email_incorrect)
             true
-        }else
+        } else
             false
     }
 
-    private fun getLoginDataFromStorage(){
-        val sharedPreferences = getSharedPreferences("my_app_preferences", Context.MODE_PRIVATE)
-        val email = sharedPreferences.getString("email", "")
-        val pass = sharedPreferences.getString("password", "")
+    private fun getLoginDataFromStorage() {
+        val sharedPreferences = getSharedPreferences(
+            FieldsKeys.PREFERENCES.key,
+            Context.MODE_PRIVATE
+        )
+        val email = sharedPreferences.getString(FieldsKeys.EMAIL.key, "")
+        val pass = sharedPreferences.getString(FieldsKeys.PASSWORD.key, "")
 
-        Log.d("DATA", "email $email, pass $pass")
-
-        if (!isInvalidEmail(email.toString()) && !isInvalidPassword(pass.toString())){
-            Log.d("DATA", "IN IF")
+        if (!isInvalidEmail(email.toString()) && !isInvalidPassword(pass.toString())) {
             toMainActivity(email!!, pass!!)
             finish()
         }
     }
 
-    private fun toMainActivity(email: String, password: String){
-        val i = Intent(this, MainActivity::class.java)
-        with(i) {
-            putExtra("email", email)
-            putExtra("password", password)
+    private fun toMainActivity(email: String, password: String) {
+        with(Intent(this, MainActivity::class.java)) {
+            putExtra(FieldsKeys.EMAIL.key, email)
+            putExtra(FieldsKeys.PASSWORD.key, password)
+            startActivity(this)
         }
-        startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
     }
 }

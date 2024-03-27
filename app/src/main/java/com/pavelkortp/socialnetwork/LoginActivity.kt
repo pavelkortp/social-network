@@ -8,11 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.pavelkortp.socialnetwork.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginBinding
+    private val binding: ActivityLoginBinding by lazy {
+        ActivityLoginBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.LoginBTN.setOnClickListener {
@@ -32,17 +33,17 @@ class LoginActivity : AppCompatActivity() {
         val pass = binding.PasswordInput.text.toString()
 
         if (email.isBlank()) {
-            binding.EmailInput.error = "Email is empty"
+            binding.EmailInput.error = getString(R.string.email_is_empty)
             return true
         } else if(pass.isBlank()) {
-            binding.PasswordInput.error = "Password is empty"
+            binding.PasswordInput.error = getString(R.string.password_is_empty)
             return true
         }
         val i = Intent(this, MainActivity::class.java)
 
         with(i) {
-            putExtra("email", email)
-            putExtra("password", pass)
+            putExtra(FieldsKeys.EMAIL.key, email)
+            putExtra(FieldsKeys.PASSWORD.key, pass)
         }
         startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         return false
