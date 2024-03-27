@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             binding.EmailInput.error = getString(R.string.email_is_empty)
             return true
         } else if(pass.isBlank()) {
-            binding.PasswordInput.error = getString(R.string.password_is_empty)
+            binding.EmailInput.error = getString(R.string.password_is_empty)
             return true
         }
         val i = Intent(this, MainActivity::class.java)

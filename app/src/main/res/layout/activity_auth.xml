@@ -33,58 +33,110 @@
         app:layout_constraintTop_toBottomOf="@id/AuthTitle" />
 
 
-    <TextView
-        android:id="@+id/EmailLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:text="@string/email"
-        android:textColor="@color/Gray"
-        android:textSize="@dimen/auth_normal_text"
-        app:layout_constraintBottom_toTopOf="@id/EmailInputLayout"
-        app:layout_constraintStart_toStartOf="@id/EmailInputLayout" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/EmailLabel"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="@dimen/default_margin"-->
+    <!--        android:text="@string/email"-->
+    <!--        android:textColor="@color/Gray"-->
+    <!--        android:textSize="@dimen/auth_normal_text"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/EmailInputLayout"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/EmailInputLayout" />-->
 
-    <EditText
+    <!--    <EditText-->
+    <!--        android:id="@+id/EmailInputLayout"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="@dimen/medium_margin"-->
+    <!--        android:inputType="textEmailAddress"-->
+    <!--        android:paddingStart="@dimen/default_margin"-->
+    <!--        android:paddingEnd="@dimen/default_margin"-->
+    <!--        android:textColor="@color/White"-->
+    <!--        android:textSize="@dimen/normalText"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/RegisterBTN"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.466"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/PasswordLabel"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:padding="@dimen/default_margin"-->
+    <!--        android:text="@string/password"-->
+    <!--        android:textColor="@color/Gray"-->
+    <!--        android:textSize="@dimen/auth_normal_text"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/PasswordInput"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/EmailInputLayout"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/EmailInputLayout" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/PasswordInput"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="@dimen/medium_margin"-->
+    <!--        android:inputType="textPassword"-->
+    <!--        android:padding="@dimen/default_margin"-->
+    <!--        android:textColor="@color/White"-->
+    <!--        android:textSize="@dimen/normalText"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/EmailInputLayout" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/EmailInputLayout"
+        style="?attr/textInputFilledStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_margin"
-        android:inputType="textEmailAddress"
-        android:paddingStart="@dimen/default_margin"
-        android:paddingEnd="@dimen/default_margin"
-        android:textColor="@color/White"
-        android:textSize="@dimen/normalText"
+        android:hint="@string/email"
+        app:errorEnabled="true"
+        app:expandedHintEnabled="false"
+        android:textColorHint="@color/TextWhite"
         app:layout_constraintBottom_toBottomOf="@id/RegisterBTN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EmailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/MainBackground"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/White"
+            android:textSize="@dimen/normalText" />
 
-    <TextView
-        android:id="@+id/PasswordLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/default_margin"
-        android:text="@string/password"
-        android:textColor="@color/Gray"
-        android:textSize="@dimen/auth_normal_text"
-        app:layout_constraintBottom_toTopOf="@id/PasswordInput"
-        app:layout_constraintStart_toStartOf="@id/EmailInputLayout"
-        app:layout_constraintTop_toBottomOf="@id/EmailInputLayout" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/PasswordInput"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/PasswordInputLayout"
+        style="?attr/textInputFilledStyle"
+        android:textColorHint="@color/TextWhite"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/medium_margin"
-        android:inputType="textPassword"
-        android:padding="@dimen/default_margin"
-        android:textColor="@color/White"
-        android:textSize="@dimen/normalText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/EmailInputLayout" />
+        android:hint="@string/password"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@id/EmailInputLayout"
+        app:layout_constraintStart_toStartOf="@id/EmailInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/EmailInputLayout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/MainBackground"
+            android:inputType="textPassword"
+            android:textColor="@color/White"
+            android:textSize="@dimen/normalText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/RememberMe"
@@ -93,8 +145,8 @@
         android:text="@string/remember_me"
         android:textColor="@color/White"
         android:textSize="@dimen/auth_normal_text"
-        app:layout_constraintStart_toStartOf="@id/PasswordInput"
-        app:layout_constraintTop_toBottomOf="@id/PasswordInput" />
+        app:layout_constraintStart_toStartOf="@id/PasswordInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/PasswordInputLayout" />
 
     <TextView
         android:id="@+id/BottomText"
@@ -158,8 +210,8 @@
         android:textColor="@color/White"
         android:textSize="@dimen/auth_large_text"
         app:layout_constraintBottom_toTopOf="@id/WarningText1"
-        app:layout_constraintEnd_toEndOf="@id/PasswordInput"
-        app:layout_constraintStart_toStartOf="@id/PasswordInput" />
+        app:layout_constraintEnd_toEndOf="@id/PasswordInputLayout"
+        app:layout_constraintStart_toStartOf="@id/PasswordInputLayout" />
 
     <TextView
         android:id="@+id/TextBetweenBTNS"

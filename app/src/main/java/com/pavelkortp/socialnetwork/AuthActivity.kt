@@ -40,7 +40,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun register(): Boolean {
-        val email = binding.EmailInputLayout.text.toString()
+        val email = binding.EmailInput.text.toString()
         val pass = binding.PasswordInput.text.toString()
 
         if (isInvalidEmail(email) || isInvalidPassword(pass))
@@ -79,10 +79,10 @@ class AuthActivity : AppCompatActivity() {
      */
     private fun isInvalidPassword(password: String): Boolean {
         return if (password.isBlank()) {
-            binding.PasswordInput.error = getString(R.string.password_is_empty)
+            binding.PasswordInputLayout.error = getString(R.string.password_is_empty)
             true
         } else if (password.length < MIN_PASS_LENGTH) {
-            binding.PasswordInput.error = getString(R.string.password_icnorrect)
+            binding.PasswordInputLayout.error = getString(R.string.password_icnorrect)
             true
         } else
             false
