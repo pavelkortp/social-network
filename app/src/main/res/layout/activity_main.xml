@@ -20,8 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/medium_margin"
-        android:layout_marginTop="20dp"
-        android:text="Settings"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:text="@string/settings"
         android:textColor="@color/White"
         android:textSize="@dimen/largeText"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,12 +29,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/LogOut"
-        android:layout_width="150dp"
+        android:layout_width="@dimen/logout_btn_width"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/medium_margin"
         android:background="@drawable/bordered_button_shape"
         android:backgroundTint="@color/Gray"
-        android:text="Log out"
+        android:text="@string/log_out"
         android:textAllCaps="false"
         android:textColor="@color/Gray"
         android:textSize="@dimen/smallText"
@@ -115,24 +115,24 @@
 
             <ImageView
                 android:id="@+id/FacebookIcon"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/media_icon_size"
+                android:layout_height="@dimen/media_icon_size"
                 android:layout_margin="@dimen/medium_margin"
                 android:scaleType="centerCrop"
                 android:src="@drawable/facebook_icon" />
 
             <ImageView
                 android:id="@+id/LinkedinIcon"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/media_icon_size"
+                android:layout_height="@dimen/media_icon_size"
                 android:layout_margin="@dimen/medium_margin"
                 android:scaleType="centerCrop"
                 android:src="@drawable/linkedin_icon" />
 
             <ImageView
                 android:id="@+id/InstagramIcon"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/media_icon_size"
+                android:layout_height="@dimen/media_icon_size"
                 android:layout_margin="@dimen/medium_margin"
                 android:scaleType="centerCrop"
                 android:src="@drawable/instagram_icon" />
@@ -143,13 +143,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ContactsBTN"
         android:layout_width="0dp"
-        android:layout_height="65dp"
+        android:layout_height="@dimen/filled_btn_height"
         android:layout_marginStart="@dimen/medium_margin"
         android:layout_marginEnd="@dimen/medium_margin"
         android:layout_marginBottom="@dimen/default_margin"
         android:background="@drawable/button_shape"
         android:backgroundTint="@color/profileButtonsColor"
-        android:text="VIEW MY CONTACTS"
+        android:text="@string/view_my_contacts"
         android:foreground="?attr/selectableItemBackground"
         android:textColor="@color/White"
         android:textSize="@dimen/smallText"
@@ -161,11 +161,11 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/EditProfileBTN"
         android:layout_width="0dp"
-        android:layout_height="55dp"
+        android:layout_height="@dimen/bordered_btn_height"
         android:layout_marginBottom="@dimen/default_margin"
         android:background="@drawable/bordered_button_shape"
         android:backgroundTint="@color/Black"
-        android:text="Edit profile"
+        android:text="@string/edit_profile"
         android:foreground="?attr/selectableItemBackground"
         android:textAllCaps="false"
         android:textColor="@color/Black"
@@ -179,7 +179,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_margin"
-        android:text="Go to settings and fill out the profile"
+        android:text="@string/go_to_settings_and_fill_out_the_profile"
         android:textColor="@color/Black"
         android:textSize="@dimen/smallText"
         app:layout_constraintBottom_toTopOf="@id/EditProfileBTN"

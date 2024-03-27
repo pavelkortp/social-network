@@ -2,6 +2,7 @@
 <resources>
     <color name="Black">#FF000000</color>
     <color name="White">#FFFFFFFF</color>
+    <color name="TextWhite">#FAFAFA</color>
     <color name="Gray">#B2B2B3</color>
     <color name="MainBackground">#242235</color>
     <color name="profileButtonsColor">#FB5E06</color>
