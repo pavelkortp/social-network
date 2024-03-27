@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryText">#FAFAFA</color>
+    <color name="otherText">#B2B2B3</color>
+    <color name="secondary">#000000</color>
+    <color name="MainBackground">#242235</color>
+    <color name="profileButtonsColor">#FB5E06</color>
+</resources>
