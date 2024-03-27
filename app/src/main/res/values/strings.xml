@@ -21,7 +21,7 @@
     <string name="edit_profile">Edit profile</string>
     <string name="go_to_settings_and_fill_out_the_profile">Go to settings and fill out the profile</string>
     <string name="password_is_empty">Password is empty</string>
-    <string name="password_icnorrect">Password must be an 8 symbols or more</string>
+    <string name="password_incorrect">Password must be an 8 symbols or more</string>
     <string name="email_is_empty">Email is empty</string>
     <string name="email_incorrect">This is not an email</string>
     <string name="forgot_your_password">Forgot your password?</string>
